@@ -8,6 +8,14 @@ int* FindTarget(int* arr, int n, int target)
     int index2;
     int flag=0;
     int f=0;
+    int counter=0;
+    for (int i=0;i<n;i++)
+    {
+        if (arr[i]!=target)
+        {
+            counter++;
+        }
+    }
     for (int i=0;i<n;i++)
     {
         if (f==0)
@@ -24,6 +32,11 @@ int* FindTarget(int* arr, int n, int target)
             flag=1;
             index2 = i;
         }
+    }
+       if (counter==n)
+    {
+        target_list[0]=target_list[1]= -1;
+        return target_list;
     }
     target_list[0]=index1;
     if (flag==0)
